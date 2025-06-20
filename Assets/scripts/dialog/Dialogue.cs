@@ -16,11 +16,14 @@ public class Phrase
     public string name;
     public string text;
     public Answers[] answers;
+    public Sprite left;
+    public Sprite right;
 }
 
 
 [CreateAssetMenu (menuName = "Dialogue")]
 public class Dialogue : ScriptableObject
+
 {
 
 

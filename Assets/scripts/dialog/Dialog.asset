@@ -15,12 +15,30 @@ MonoBehaviour:
   phrases:
   - name: NPC
     text: "\u041F\u0440\u0438\u0432\u0435\u0442"
-    answers:
-    - text: "\u041F\u0440\u0438\u0432\u0435\u0442"
-      nextDialogue: {fileID: 11400000}
-  - name: You
+    answers: []
+    left: {fileID: 1959512401, guid: 7465ef4f8274330419bdc1abe808b291, type: 3}
+    right: {fileID: -1383260436, guid: 7465ef4f8274330419bdc1abe808b291, type: 3}
+  - name: NPC
     text: "\u041A\u0430\u043A \u0434\u0435\u043B\u0430"
     answers:
     - text: "\u041E\u0442\u043B\u0438\u0447\u043D\u043E"
-      nextDialogue: {fileID: 0}
+      nextDialogue: {fileID: 11400000, guid: ad81642d2bb9a9d4aa6fe1923e9b9b01, type: 2}
+    - text: "\u043D\u043E\u0440\u043C\u0430\u043B\u044C\u043D\u043E"
+      nextDialogue: {fileID: 11400000, guid: ad81642d2bb9a9d4aa6fe1923e9b9b01, type: 2}
+    - text: "\u043F\u043B\u043E\u0445\u043E"
+      nextDialogue: {fileID: 11400000, guid: ad81642d2bb9a9d4aa6fe1923e9b9b01, type: 2}
+    left: {fileID: 0}
+    right: {fileID: 0}
+  - name: NPC
+    text: "\u0447\u0442\u043E \u0434\u0435\u043B\u0430\u0435\u0448\u044C?"
+    answers:
+    - text: "\u0441\u043A\u0443\u0447\u0430\u044E"
+      nextDialogue: {fileID: 11400000}
+    - text: "\u043D\u0438\u0447\u0435\u0433\u043E"
+      nextDialogue: {fileID: 11400000, guid: 5ef907a6359a017499f5d337cf26c654, type: 2}
+    - text: "\u0438\u0433\u0440\u0430\u044E \u0432 \u044D\u0442\u043E \u0448\u0435\u0434\u0435\u0432\u0440\u043E
+        \u0438\u0433\u0440\u0443"
+      nextDialogue: {fileID: 11400000, guid: ad81642d2bb9a9d4aa6fe1923e9b9b01, type: 2}
+    left: {fileID: 0}
+    right: {fileID: 0}
   curStep: 0

@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 
 public class UIManager : MonoBehaviour
@@ -8,7 +9,12 @@ public class UIManager : MonoBehaviour
     public Button[] answerButton;
     public TextMeshProUGUI npcName;
     public TextMeshProUGUI speech;
+    public Image leftImg;
+    public Image rightImg;
 
+    public Canvas canvas;
+
+    public float delay = 0.1f;
 
     public Dialogue curDialogue;
 
@@ -25,12 +31,25 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    
+    IEnumerator ShowText(string text_to_show)
+    {
+        for(int i = 0; i <= text_to_show.Length; i++)
+        {
+            speech.text = text_to_show.Substring(0, i);
+            yield return new WaitForSeconds(delay);
+        }
+    }
+
 
     void DialogueMoment()
     {
         Phrase curPhrase = curDialogue.GetCurPhrase();
         npcName.text = curPhrase.name;
-        speech.text = curPhrase.text;
+        leftImg.sprite = curPhrase.left;
+        rightImg.sprite = curPhrase.right;
+
+        StartCoroutine(ShowText(curPhrase.text));
 
 
         for (int i = 0; i < curPhrase.answers.Length; i++)
@@ -60,11 +79,16 @@ public class UIManager : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        canvas.enabled = true;
         if (collision.TryGetComponent<DialogueOwner>(out DialogueOwner dialogueOwner))
         {
             curDialogue = dialogueOwner.dialogue;
             curDialogue.Initialize();
             DialogueMoment();
         }
+    }
+
+    void OnTriggerExit2D(Collider2D collision){
+        canvas.enabled = false;
     }
 }

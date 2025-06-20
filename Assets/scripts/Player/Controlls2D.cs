@@ -39,8 +39,6 @@ public class Controlls2D : MonoBehaviour
 
     public void OnMove(InputValue input)
     {
-        Debug.Log(input.Get<Vector2>());
-        Debug.Log(input.Get<Vector2>() * new Vector2(speed, speed));
         _rigitbody.linearVelocity = input.Get<Vector2>() * new Vector2(speed, speed);
     }
 
